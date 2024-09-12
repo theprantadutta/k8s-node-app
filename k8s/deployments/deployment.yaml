@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-node-app
-  replicas: 3
 spec:
   selector:
     matchLabels:
