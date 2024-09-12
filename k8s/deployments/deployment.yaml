@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8s-node-app
+  replicas: 3
 spec:
   selector:
     matchLabels:
@@ -13,7 +14,7 @@ spec:
     spec:
       containers:
       - name: k8s-node-app
-        image: prantaDutta/k8s-node-app
+        image: prantadutta/k8s-node-app:latest
         resources:
           limits:
             memory: "128Mi"
