@@ -6,8 +6,8 @@ spec:
   selector:
     app: k8s-node-app
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 3000
-    nodePort: 30001
-  type: NodePort
+    - protocol: TCP
+      port: 80          # External port
+      targetPort: 3000   # Internal container port
+  type: LoadBalancer      # kube-vip will manage the external IP
+  loadBalancerIP: 192.168.170.200  # Static IP managed by kube-vip
